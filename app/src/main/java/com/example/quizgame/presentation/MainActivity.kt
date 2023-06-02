@@ -10,6 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.quizgame.common.Navigation
 import com.example.quizgame.presentation.ui.theme.QuizGameTheme
 import com.example.quizgame.presentation.web_screen.WebScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,7 +27,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    WebScreen()
+                    val navController = rememberNavController()
+                    Navigation(navController = navController)
                 }
             }
         }

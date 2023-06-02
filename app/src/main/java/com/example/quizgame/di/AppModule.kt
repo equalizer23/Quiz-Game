@@ -1,5 +1,7 @@
 package com.example.quizgame.di
 
+import com.example.quizgame.data.remote.service.ConfigurationService
+import com.example.quizgame.data.remote.service.impl.ConfigurationServiceImpl
 import com.example.quizgame.data.repositories.RepositoryImpl
 import com.example.quizgame.domain.repositories.Repository
 import com.google.firebase.database.FirebaseDatabase
@@ -22,6 +24,12 @@ object AppModule {
     @Singleton
     fun provideRepository() : Repository{
         return RepositoryImpl(provideRealtimeDatabase())
+    }
+
+    @Provides
+    @Singleton
+    fun providesConfigurationService(): ConfigurationService{
+        return ConfigurationServiceImpl()
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.quizgame.data.repositories
 
 import android.util.Log
+import com.example.quizgame.common.Constants
 import com.example.quizgame.common.Resource
 import com.example.quizgame.common.await
 import com.example.quizgame.domain.repositories.Repository
@@ -14,7 +15,7 @@ class RepositoryImpl @Inject constructor(
 
     override suspend fun getLink() : Resource<String>{
         return try{
-            val databaseReference = db.getReference("Link")
+            val databaseReference = db.getReference(Constants.LINK_REFERENCE)
             val link = databaseReference.get().await()
             Resource.Success(link.value.toString())
         }
