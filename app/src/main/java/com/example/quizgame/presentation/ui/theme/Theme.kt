@@ -1,4 +1,4 @@
-package com.example.quizgame.ui.theme
+package com.example.quizgame.presentation.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
