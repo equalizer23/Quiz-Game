@@ -7,4 +7,5 @@ object Constants {
     const val LINK_REFERENCE = "Link"
     const val APP_NAME = "Quizyy"
     const val QUESTIONS_ROUTE = "questions"
+    const val RESULT_ROUTE = "result"
 }

@@ -1,4 +1,4 @@
-package com.example.quizgame.data.remote.service
+package com.example.quizgame.domain.repositories
 
 interface ConfigurationService {
     suspend fun fetchConfiguration() : Boolean

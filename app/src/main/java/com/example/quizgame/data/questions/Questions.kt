@@ -1,6 +1,6 @@
 package com.example.quizgame.data.questions
 
-import com.example.quizgame.domain.repositories.models.Question
+import com.example.quizgame.domain.models.Question
 import com.example.quizgame.R
 
 object Questions {

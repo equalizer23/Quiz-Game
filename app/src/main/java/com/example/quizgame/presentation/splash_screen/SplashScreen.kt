@@ -23,6 +23,10 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.delay
 import com.example.quizgame.R
 import com.example.quizgame.common.Constants
+import com.example.quizgame.presentation.web_screen.GetLinkViewModel
+import com.example.quizgame.presentation.web_screen.LinkState
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
 @Composable
 fun SplashScreen(
@@ -30,9 +34,8 @@ fun SplashScreen(
     viewModel: SplashScreenViewModel = hiltViewModel()
 ) {
     val isWebView by remember { mutableStateOf(viewModel.loadWebViewOptions()) }
-    Log.e("Web", "$isWebView")
-    val destination: String = if(isWebView) Constants.WEB_ROUTE else Constants.QUIZ_ROUTE
 
+    var destination: String = if(isWebView) Constants.WEB_ROUTE else Constants.QUIZ_ROUTE
     val scale = remember {
         Animatable(0f)
     }
@@ -48,7 +51,7 @@ fun SplashScreen(
                 })
         )
         delay(2000L)
-        navController.navigate("quiz"){
+        navController.navigate(destination){
             popUpTo(Constants.SPLASH_ROUTE){
                 inclusive = true
             }

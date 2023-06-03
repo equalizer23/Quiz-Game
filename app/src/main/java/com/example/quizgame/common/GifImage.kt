@@ -5,6 +5,7 @@ import android.os.Build.VERSION.SDK_INT
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import coil.ImageLoader
 import coil.compose.rememberImagePainter
@@ -36,6 +37,7 @@ fun GifImage(
             }
         ),
         contentDescription = null,
-        modifier = modifier
+        modifier = modifier,
+        contentScale = ContentScale.FillBounds
     )
 }

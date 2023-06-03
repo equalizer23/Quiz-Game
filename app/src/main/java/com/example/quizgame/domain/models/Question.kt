@@ -1,4 +1,4 @@
-package com.example.quizgame.domain.repositories.models
+package com.example.quizgame.domain.models
 
 data class Question(
     val id: Int,

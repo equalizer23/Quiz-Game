@@ -20,6 +20,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.quizgame.R
 import com.example.quizgame.common.Constants
+import com.example.quizgame.presentation.question_screen.components.GifImage
 
 @Composable
 fun MainScreen(
@@ -44,6 +45,10 @@ fun MainScreen(
                 textAlign = TextAlign.Center
             )
 
+            GifImage(
+                imageID = R.drawable.who_question_marks
+            )
+
             OutlinedButton(
                 onClick = {navController.navigate(Constants.QUESTIONS_ROUTE)},
                 colors = ButtonDefaults.outlinedButtonColors(
@@ -55,7 +60,9 @@ fun MainScreen(
             ) {
                 Text(
                     text = "Start",
-                    modifier = Modifier.fillMaxWidth().padding(5.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(5.dp),
                     fontSize = 24.sp,
                     fontFamily = FontFamily(Font(R.font.notosans_regular)),
                     textAlign = TextAlign.Center
