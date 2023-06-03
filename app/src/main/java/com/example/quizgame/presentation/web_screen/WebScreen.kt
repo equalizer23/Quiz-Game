@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.quizgame.R
+import com.example.quizgame.common.BackPressSample
 
 
 @Composable
@@ -29,6 +30,8 @@ fun WebScreen(
     val linkState = viewModel.linkState.value
     Log.e("State", linkState.isLoading.toString())
     val link = linkState.link
+
+    BackPressSample()
 
     Box(modifier = Modifier.fillMaxSize()){
         if (linkState.error.isNotBlank()){

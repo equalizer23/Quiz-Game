@@ -1,5 +1,7 @@
 package com.example.quizgame.presentation.main_screen
 
+import android.os.Handler
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -8,6 +10,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.Font
@@ -19,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.quizgame.R
+import com.example.quizgame.common.BackPressSample
 import com.example.quizgame.common.Constants
 import com.example.quizgame.presentation.question_screen.components.GifImage
 
@@ -26,6 +31,7 @@ import com.example.quizgame.presentation.question_screen.components.GifImage
 fun MainScreen(
     navController: NavHostController
 ) {
+    BackPressSample()
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -67,7 +73,6 @@ fun MainScreen(
                     fontFamily = FontFamily(Font(R.font.notosans_regular)),
                     textAlign = TextAlign.Center
                 )
-
 
             }
         }
